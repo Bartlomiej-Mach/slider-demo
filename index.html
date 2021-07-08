@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+    
+    <link rel="stylesheet" href="app.css">
+</head>
+<body>
+    <div class="slider-wrapper">
+        <div class="main-slides">
+            <div class="slide-1 big-slide"></div>
+            <div class="slide-2 big-slide"></div>
+            <div class="slide-3 big-slide"></div>
+            <div class="slide-4 big-slide"></div>
+            <div class="slide-5 big-slide"></div>
+            <div class="slide-6 big-slide"></div>
+            <div class="slide-7 big-slide"></div>
+            <div class="slide-8 big-slide"></div>
+            <div class="slide-9 big-slide"></div>
+            <div class="slide-10 big-slide"></div>
+
+            <button class="next-slide button-slide" onclick="nextPrevSlide(1)"> > </button>
+            <button class="prev-slide button-slide" onclick="nextPrevSlide(-1)"> < </button>
+        </div>
+        <div class="small-slides">
+            <div class="small-slide small-slide-1" onclick="showSlide(1)"></div>
+            <div class="small-slide small-slide-2" onclick="showSlide(2)"></div>
+            <div class="small-slide small-slide-3" onclick="showSlide(3)"></div>
+            <div class="small-slide small-slide-4" onclick="showSlide(4)"></div>
+            <div class="small-slide small-slide-5" onclick="showSlide(5)"></div>
+            <div class="small-slide small-slide-6" onclick="showSlide(6)"></div>
+            <div class="small-slide small-slide-7" onclick="showSlide(7)"></div>
+            <div class="small-slide small-slide-8" onclick="showSlide(8)"></div>
+            <div class="small-slide small-slide-9" onclick="showSlide(9)"></div>
+            <div class="small-slide small-slide-10" onclick="showSlide(10)"></div>
+        </div>
+        
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

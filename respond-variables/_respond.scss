@@ -1,0 +1,170 @@
+// VARIABLES //
+$phone-w: 650px;
+$tabPort-w: 770px;
+$tabLand-w: 1150px;
+$laptop-w: 1740px;
+$bigScreen-w: 1921px;
+$verySmall-w: 450px;
+$smaller-than-1920: 1920px;
+$smaller-than-1550: 1550px;
+$smaller-than-1480: 1480px;
+$smaller-than-1350: 1350px;
+$smaller-than-1300: 1300px;
+$smaller-than-1150: 1150px;
+$smaller-than-1050: 1050px;
+$smaller-than-960: 960px;
+$smaller-than-880: 880px;
+$smaller-than-600: 600px;
+$smaller-than-500: 500px;
+$smaller-than-425: 425px;
+$smaller-than-480: 480px;
+$smaller-than-350: 350px;
+
+
+$height-700: 700px;
+
+@mixin height-700 {
+    @media (max-height: #{$height-700}) {
+        @content;
+    }
+}
+
+// --------------- // 
+//phone
+@mixin phone {
+    @media (max-width: #{$phone-w}) {
+        @content;
+    }
+}
+//smaller than 1920px
+@mixin smaller-than-480 {
+    @media (max-width: #{$smaller-than-480}) {
+        @content;
+    }
+}
+@mixin smaller-than-350 {
+    @media (max-width: #{$smaller-than-350}) {
+        @content;
+    }
+}
+
+@mixin smaller-than-1920 {
+    @media (max-width: #{$smaller-than-1920}) {
+        @content;
+    }
+}
+
+//smaller than 1480px
+@mixin smaller-than-1480 {
+    @media (max-width: #{$smaller-than-1480}) {
+        @content;
+    }
+}
+//smaller than 1300px
+@mixin smaller-than-1300 {
+    @media (max-width: #{$smaller-than-1300}) {
+        @content;
+    }
+}
+
+@mixin smaller-than-1350 {
+    @media (max-width: #{$smaller-than-1350}) {
+        @content;
+    }
+}
+@mixin smaller-than-1150 {
+    @media (max-width: #{$smaller-than-1150}) {
+        @content;
+    }
+}
+
+//smaller than 1050px
+@mixin smaller-than-1050 {
+    @media (max-width: #{$smaller-than-1050}) {
+        @content;
+    }
+}
+//smaller than 960px
+@mixin smaller-than-960 {
+    @media (max-width: #{$smaller-than-960}) {
+        @content;
+    }
+}
+
+//smaller than 880px
+@mixin smaller-than-880 {
+    @media (max-width: #{$smaller-than-880}) {
+        @content;
+    }
+}
+@mixin smaller-than-600 {
+    @media (max-width: #{$smaller-than-600}) {
+        @content;
+    }
+}
+@mixin smaller-than-500 {
+    @media (max-width: #{$smaller-than-500}) {
+        @content;
+    }
+}
+
+//smaller than 425px
+@mixin smaller-than-425 {
+    @media (max-width: #{$smaller-than-425}) {
+        @content;
+    }
+}
+
+
+//tab port
+@mixin tabPort {
+    @media (max-width: #{$tabPort-w}) {
+        @content;
+    }
+}
+
+//tab land
+@mixin tabLand {
+    @media (max-width: #{$tabLand-w}) {
+        @content;
+    }
+}
+
+//laptop
+@mixin laptop {
+    @media (max-width: #{$laptop-w}) {
+        @content;
+    }
+}
+
+//bigscreen
+@mixin bigscreen {
+    @media (min-width: #{$bigScreen-w}) {
+        @content;
+    }
+}
+
+@mixin smaller-than-1550 {
+    @media (max-width: #{$smaller-than-1550}) {
+        @content;
+    }
+}
+
+@mixin verysmall {
+    @media (max-width: #{$verySmall-w}) {
+        @content;
+    }
+}
+
+
+/* 
+//respond
+@include phone {}
+@include tabPort {}
+@include tabLand {}
+@include laptop {}
+@include bigscreen {}
+@include halfscreen {}
+@include verysmall {}
+//
+*/
