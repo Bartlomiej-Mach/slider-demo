@@ -135,4 +135,4 @@ fetch("file.json")
 
 
 var connectRequest = new XMLHttpRequest();
-connectRequest.open('GET', '');
+connectRequest.open('GET', 'https://github.com/Bartlomiej-Mach/slider-demo/blob/main/example-file.json');
