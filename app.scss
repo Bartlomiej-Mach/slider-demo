@@ -11,6 +11,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    
 }
 
 
@@ -18,7 +19,7 @@ body {
     overflow: hidden;
     width: 70%;
     height: 500px;
-    background: bisque;
+    
     @include smaller-than-880 {
         width: 90%;
     }
@@ -35,7 +36,10 @@ body {
             opacity: 1;
             transition: .2s;
             animation: zoom-in .2s forwards; 
-
+            img {
+                width: 100%;
+                height: 100%;
+            }
 
             &:nth-child(1) {
                 background: chartreuse;
@@ -102,6 +106,11 @@ body {
             transition: 0.2s;
             cursor: pointer;
             overflow: hidden;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+
             &::before {
                 width: 110%;
                 height: 110%;

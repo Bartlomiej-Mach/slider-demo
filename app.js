@@ -111,3 +111,28 @@ function ableBtn (element) {
 
 
 
+
+///Pobranie zdjec
+//OPTION 1 - FETCH
+
+/*
+
+fetch("file.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.allImgPaths[0]);
+        for(var i = 0; i < data.allImgPaths.length; i++) {
+            const pathTaker = '<img src="' + data.allImgPaths[i].imgPath + '" class="big-slide-img">';
+            document.querySelector('.slide-' + [i + 1]).innerHTML = pathTaker;
+            document.querySelector('.small-slide-' + [i + 1]).innerHTML = pathTaker;
+        }
+    })
+
+*/
+
+
+//OPTION 2 - AJAX
+
+
+var connectRequest = new XMLHttpRequest();
+connectRequest.open('GET', '');

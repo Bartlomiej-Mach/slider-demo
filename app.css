@@ -33,7 +33,6 @@ body {
   overflow: hidden;
   width: 70%;
   height: 500px;
-  background: bisque;
 }
 
 @media (max-width: 880px) {
@@ -58,6 +57,11 @@ body {
   transition: .2s;
   -webkit-animation: zoom-in .2s forwards;
           animation: zoom-in .2s forwards;
+}
+
+.slider-wrapper .main-slides .big-slide img {
+  width: 100%;
+  height: 100%;
 }
 
 .slider-wrapper .main-slides .big-slide:nth-child(1) {
@@ -135,6 +139,11 @@ body {
   transition: 0.2s;
   cursor: pointer;
   overflow: hidden;
+}
+
+.slider-wrapper .small-slides .small-slide img {
+  width: 100%;
+  height: 100%;
 }
 
 .slider-wrapper .small-slides .small-slide::before {
