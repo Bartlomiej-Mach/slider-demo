@@ -1,35 +1,11 @@
-{
-    "allImgPaths": [
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--1.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--2.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--3.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--4.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--5.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--6.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--7.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--8.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--9.jpg"
-        },
-        {
-            "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--10.jpg"
-        }
-        
-    ]
-}
+[
+    {
+        "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--1.jpg"
+    },
+    {
+        "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--2.jpg"
+    },
+    {
+        "imgPath": "https://github.com/Bartlomiej-Mach/slider-demo/blob/main/img/slide--3.jpg"
+    }
+]

@@ -133,6 +133,35 @@ fetch("file.json")
 
 //OPTION 2 - AJAX
 
+// var connectRequest = new XMLHttpRequest();
+// connectRequest.open('GET', 'https://raw.githubusercontent.com/Bartlomiej-Mach/slider-demo/main/example-file.json');
+// connectRequest.onload = function onLoadRequest() {
+//     console.log('x');
+//     const ourData = JSON.parse(connectRequest.responseXML);
+//     renderHTML(ourData);
+// }
+// connectRequest.send();
 
-var connectRequest = new XMLHttpRequest();
-connectRequest.open('GET', 'https://github.com/Bartlomiej-Mach/slider-demo/blob/main/example-file.json');
+
+// function renderHTML(data) {
+//     for(var i = 0; i < data.allImgPath.length; i++) {
+//         const pathTaker = '<img src="' + data.allImgPaths[i].imgPath + '" class="big-slide-img">';
+//         document.querySelector('.slide-' + [i + 1]).innerHTML = pathTaker;
+//         document.querySelector('.small-slide-' + [i + 1]).innerHTML = pathTaker;
+//     }
+// }
+
+const xhr = new XMLHttpRequest();
+xhr.open('get', 'https://raw.githubusercontent.com/Bartlomiej-Mach/slider-demo/main/example-file.json', true);
+xhr.send();
+
+xhr.onload = function (){
+    const json = JSON.parse(xhr.responseText);
+    json.forEach(function(val) {
+        const pathTaker = '<img src="' + val.allImgPaths[1].imgPath + '" class="big-slide-img">';
+    });
+    document.querySelector('.slide-1').innerHTML = pathTaker;
+
+    // console.log(this.responseText);
+    // console.log(xhr.allImgPaths[0].imgPath.responseText);
+};
