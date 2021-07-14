@@ -1,17 +1,15 @@
-const smallSlide2 = document.querySelector('small-slide-2');
-const bigSlide2 =document.querySelector('slide-2');
 const nextBtn = document.querySelector('.next-slide');
 const prevBtn = document.querySelector('.prev-slide');
 
-var smallSlideArray = ['.small-slide-1', '.small-slide-2', '.small-slide-3', '.small-slide-4', '.small-slide-5', '.small-slide-6', '.small-slide-7', '.small-slide-8', '.small-slide-9', '.small-slide-10'];
+const smallSlideArray = ['.small-slide-1', '.small-slide-2', '.small-slide-3', '.small-slide-4', '.small-slide-5', '.small-slide-6', '.small-slide-7', '.small-slide-8', '.small-slide-9', '.small-slide-10'];
 
-var slideIndex = 1;
+let slideIndex = 1;
 showSlides(slideIndex);
 
 //glowna funkcja wyswietlajaca slaidy
 function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("big-slide");
+    let i;
+    let slides = document.getElementsByClassName("big-slide");
 
     if (n > slides.length) {
         slideIndex = 1
@@ -37,14 +35,14 @@ function showSlides(n) {
         disableBtn(prevBtn);
         
     } else {
-        ableBtn(prevBtn);
+        enableBtn(prevBtn);
         prevBtn.addEventListener('click', showLessSlides);
     }
     
     if(slideIndex === 10) {
         disableBtn(nextBtn);
     } else {
-        ableBtn(nextBtn);
+        enableBtn(nextBtn);
         nextBtn.addEventListener('click', showMoreSlides);
     }
 }
@@ -56,11 +54,30 @@ function showSlide (n) {
     showSlides(slideIndex = n);
 };
 
+
+for(let a = 0; a < smallSlideArray.length; a++) {
+    document.querySelector(smallSlideArray[a]).addEventListener('click', function() {
+        showSlide(a+1);
+    })
+}
+
+
 //funkcja zainicjowana w przyciskach 
 //pozwala na przejscie z jednego na drgui slaid i na odwrot
 function nextPrevSlide(n) {
     showSlides(slideIndex += n);
 }
+
+const buttonNext = () => {
+    nextPrevSlide(1);
+}
+
+const buttonPrev = () => {
+    nextPrevSlide(-1);
+}
+
+nextBtn.addEventListener('click', buttonNext);
+prevBtn.addEventListener('click', buttonPrev);
 
 
 let move = 'translate';
@@ -105,9 +122,17 @@ function showLessSlides () {
 function disableBtn (element) {
     element.disabled = true;
 }
-function ableBtn (element) {
+function enableBtn (element) {
     element.disabled = false;
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -121,7 +146,7 @@ fetch("file.json")
     .then(response => response.json())
     .then(data => {
         console.log(data.allImgPaths[0]);
-        for(var i = 0; i < data.allImgPaths.length; i++) {
+        for(let i = 0; i < data.allImgPaths.length; i++) {
             const pathTaker = '<img src="' + data.allImgPaths[i].imgPath + '" class="big-slide-img">';
             document.querySelector('.slide-' + [i + 1]).innerHTML = pathTaker;
             document.querySelector('.small-slide-' + [i + 1]).innerHTML = pathTaker;
@@ -133,35 +158,17 @@ fetch("file.json")
 
 //OPTION 2 - AJAX
 
-// var connectRequest = new XMLHttpRequest();
-// connectRequest.open('GET', 'https://raw.githubusercontent.com/Bartlomiej-Mach/slider-demo/main/example-file.json');
-// connectRequest.onload = function onLoadRequest() {
-//     console.log('x');
-//     const ourData = JSON.parse(connectRequest.responseXML);
-//     renderHTML(ourData);
-// }
-// connectRequest.send();
-
-
-// function renderHTML(data) {
-//     for(var i = 0; i < data.allImgPath.length; i++) {
-//         const pathTaker = '<img src="' + data.allImgPaths[i].imgPath + '" class="big-slide-img">';
-//         document.querySelector('.slide-' + [i + 1]).innerHTML = pathTaker;
-//         document.querySelector('.small-slide-' + [i + 1]).innerHTML = pathTaker;
-//     }
-// }
-
-const xhr = new XMLHttpRequest();
-xhr.open('get', 'https://raw.githubusercontent.com/Bartlomiej-Mach/slider-demo/main/example-file.json', true);
-xhr.send();
-
-xhr.onload = function (){
-    const json = JSON.parse(xhr.responseText);
-    json.forEach(function(val) {
-        const pathTaker = '<img src="' + val.allImgPaths[1].imgPath + '" class="big-slide-img">';
-    });
-    document.querySelector('.slide-1').innerHTML = pathTaker;
-
-    // console.log(this.responseText);
-    // console.log(xhr.allImgPaths[0].imgPath.responseText);
+const connectRequest = new XMLHttpRequest();
+connectRequest.open('GET', './example-file.json');
+connectRequest.onload = function() {
+    const ourData = JSON.parse(connectRequest.responseText);
+    
+    for(let i = 0; i < ourData.length; i++) {
+        
+        const pathTaker = '<img src="' + ourData[i].imgPath + '" class="big-slide-img">';
+        document.querySelector('.slide-' + [i + 1]).innerHTML = pathTaker;
+        document.querySelector('.small-slide-' + [i + 1]).innerHTML = pathTaker;
+    };
 };
+connectRequest.send();
+
